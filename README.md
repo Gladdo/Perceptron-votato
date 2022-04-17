@@ -51,7 +51,7 @@ Un oggetto model tiene conto dei piani LinearPlanes prodotti durante l'esecuzion
 
 ![immagine](https://user-images.githubusercontent.com/94845303/163733908-7733d6eb-e83b-4f7b-8b1b-ef70f1e2122d.png)
 
-	sommando iterativamente sulle quantità votedResults e avgResults.
+sommando iterativamente sulle quantità votedResults e avgResults.
 		
 		
 # Main
