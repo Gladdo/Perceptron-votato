@@ -21,20 +21,20 @@ Progetto universitario: implementazione e analisi perceptron votato
 
 # Entry
 Una entry contiene le informazioni di un'esempio del dataset; in particolare contiene due attributi:
- * float[] x contiene i valori di ogni pixel dei 28x28 pixel che compongono l'immagine (istanza dell'esempio)
- * Int y contiene il valore della cifra raffigurata all'interno dell'immagine (label dell'esempio) e può assumere valori che vanno da 0 a 9
+* float[] x contiene i valori di ogni pixel dei 28x28 pixel che compongono l'immagine (istanza dell'esempio)
+* Int y contiene il valore della cifra raffigurata all'interno dell'immagine (label dell'esempio) e può assumere valori che vanno da 0 a 9
 	
 Il programma addestra dei modelli che effettuano una classificazione binaria delle immagini; è quindi necessario definire due insiemi nei quali le immagini possono essere categorizzate.
 Il metodo GetClass restituisce 1 o -1 per categorizzare le istanze di tipo entry in base ai valori contenuti in y, in particolare:
-	* Se y = 0,6,8,9 allora l'immagine appartiene alla classe 1
-	* Altrimenti appartiene alla classe -1
+* Se y = 0,6,8,9 allora l'immagine appartiene alla classe 1
+* Altrimenti appartiene alla classe -1
 	
 # LinearPlane 
 Gli oggetti LinearPlane contengono i parametri w e b di un piano per la classificazione; inoltre la variabile successes specifica la quantità di esempi classificati bene dal piano durante il training.
 
 Il metodo PlaneValue prende in input una entry e utilizza l'istanza x al suo interno per calcolare il valore della quantità:
 
-	* w x+b
+* w x+b
 	
 calcolata in relazione all'array dei pesi w e il bias b contenuti all'interno dell'oggetto.
 
@@ -43,11 +43,11 @@ Questo metodo viene chiamato durante la fase di training.
 
 # Model
 Un oggetto model tiene conto dei piani LinearPlanes prodotti durante l'esecuzione del training; quindi fornisce:
-	- Il piano lastLinearPlane: l'ultimo piano prodotto dal training; questo è utilizzato per calcolare la previsione last (calcolata con lastLinearPlane.PlanePrediction(entry)):
+* Il piano lastLinearPlane: l'ultimo piano prodotto dal training; questo è utilizzato per calcolare la previsione last (calcolata con lastLinearPlane.PlanePrediction(entry)):
 
 ![immagine](https://user-images.githubusercontent.com/94845303/163733894-6c1c1553-622d-41c2-9ca4-71e7ca148691.png)
 	
-	- Il metodo ExecuteModelPrediction: questo produce le predizioni voted e average utilizzando l'intera lista di LinearPlanes e posiziona i risultati negli attributi votedPrediction e avgPrediction; in particolare il loop implementa i classificatori:
+* Il metodo ExecuteModelPrediction: questo produce le predizioni voted e average utilizzando l'intera lista di LinearPlanes e posiziona i risultati negli attributi votedPrediction e avgPrediction; in particolare il loop implementa i classificatori:
 
 ![immagine](https://user-images.githubusercontent.com/94845303/163733908-7733d6eb-e83b-4f7b-8b1b-ef70f1e2122d.png)
 
