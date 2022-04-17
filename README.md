@@ -12,11 +12,14 @@ Progetto universitario: implementazione e analisi perceptron votato
 * A questo punto premere col destro sulla cartella del progetto (perceptron-analysis) e selezionare "Run As > Java Application" 
 * ![immagine](https://user-images.githubusercontent.com/94845303/163733637-fb591682-1f81-4def-b809-9a9671cb074f.png)
 
-
 	
 	
 * Nel caso in cui venisse richiesto, selezionare la launch configuration di default (quella che esegue il metodo Main)
-	
+* Una volta eseguito i precedenti passi è possibile lanciare il programma; eventualmente è possibile modificare i parametri di configurazione nel file configu.properties.
+
+ATTENZIONE: il programma richiede un elevato utilizzo di heap memory, nel caso in cui la JVM non disponga di memoria heap sufficiente si può incorrere nell'eccezione "java.lang.OutOfMemoryError: Java heap space"; in tal caso è necessario aumentare la massima memoria heap utilizzabile dalla JVM tramite la configurazione degli argomenti della JVM nelle run configurations.
+Eventualmente è possibile diminuire il numero di modelli nel parametro numberOfModels nel file config.properties per provare a diminuire l'utilizzo dell'heap memory.
+
 # Descrizioni Classi / Implementazione:
 
 # Entry
