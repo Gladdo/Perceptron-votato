@@ -113,6 +113,6 @@ Per ogni iterazione di addestramento si legge una entry dal dataset e si guarda 
 Gli oggetti Testing elaborano e contengono i dati sul test di un modello testato sull'intero testset. 
 
 Il metodo run esegue il test del modello di indice modelIndex su tutte le entries del testset e tiene conto di quante volte sbaglia a predire con i diversi classificatori last, voted e average.
-![immagine](https://user-images.githubusercontent.com/94845303/163733803-8770fb95-be26-46d1-ad43-5f0033395221.png)
+
 
 
