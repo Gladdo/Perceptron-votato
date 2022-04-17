@@ -66,10 +66,10 @@ Il loop principale itera sul vettore TRAINING_ENTRIES_SETS:
 Ad ogni iterazione i-esima il programma addestra il modello (o i modelli se NUMBER_OF_MODELS > 1) su ulteriori TRAINING_ENTRIES_SETS[i] esempi nel dataset, li testa sull'intero testset e produce i risultati dell'analisi in relazione alle epoche di training effettuate.  
 
 Il file di configurazione contiene:
-	- dataSetSize: numero di esempi nell'intero dataset
-	- trainSetSize: numero di esempi del dataset destinati al training
-	- testSetSize: numero di esempi del dataset destinati al test: sono raccolti dal dataset a partire dall'esempio trainSetSize+1
-	- attributes: numero di attributi delle istanze x degli esempi
+* dataSetSize: numero di esempi nell'intero dataset
+* trainSetSize: numero di esempi del dataset destinati al training
+* testSetSize: numero di esempi del dataset destinati al test: sono raccolti dal dataset a partire dall'esempio trainSetSize+1
+* attributes: numero di attributi delle istanze x degli esempi
 
 # DatasetManager
 
@@ -102,11 +102,11 @@ Il metodo run addestra il modello di indice modelIndex su numberOfEntries entrie
 
 L'addestramento inizia dall'ultimo LinearPlane contenuto nella lista dell'oggetto Model.
 Per ogni iterazione di addestramento si legge una entry dal dataset e si guarda se il piano corrente la classifica correttamente:
-	- Se è classificata correttamente si aumenta il numero di successi del piano
-	- Se non è classificata correttamente 
-		○ si crea un nuovo piano clonandolo dal piano corrente
-		○ Si mette in cima alla lista di piani nel modello il nuovo piano
-		○ si mette il nuovo piano nel piano corrente e lo si aggiorna sulla entry su cui si è appena sbagliato a classificare; quindi si passa alla prossima iterazione
+* Se è classificata correttamente si aumenta il numero di successi del piano
+* Se non è classificata correttamente 
+	* si crea un nuovo piano clonandolo dal piano corrente
+	* si mette in cima alla lista di piani nel modello il nuovo piano
+	* si mette il nuovo piano nel piano corrente e lo si aggiorna sulla entry su cui si è appena sbagliato a classificare; quindi si passa alla prossima iterazione
 
 # Testing
 
