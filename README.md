@@ -25,8 +25,8 @@ Per eseguire il progetto:
 
 # Entry
 Una entry contiene le informazioni di un'esempio del dataset; in particolare contiene due attributi:
-	float[] x contiene i valori di ogni pixel dei 28x28 pixel che compongono l'immagine (istanza dell'esempio)
-	Int y contiene il valore della cifra raffigurata all'interno dell'immagine (label dell'esempio) e può assumere valori che vanno da 0 a 9
+ * float[] x contiene i valori di ogni pixel dei 28x28 pixel che compongono l'immagine (istanza dell'esempio)
+ * Int y contiene il valore della cifra raffigurata all'interno dell'immagine (label dell'esempio) e può assumere valori che vanno da 0 a 9
 	
 Il programma addestra dei modelli che effettuano una classificazione binaria delle immagini; è quindi necessario definire due insiemi nei quali le immagini possono essere categorizzate.
 Il metodo GetClass restituisce 1 o -1 per categorizzare le istanze di tipo entry in base ai valori contenuti in y, in particolare:
