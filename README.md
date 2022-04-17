@@ -49,13 +49,11 @@ Model:
 Un oggetto model tiene conto dei piani LinearPlanes prodotti durante l'esecuzione del training; quindi fornisce:
 	- Il piano lastLinearPlane: l'ultimo piano prodotto dal training; questo è utilizzato per calcolare la previsione last (calcolata con lastLinearPlane.PlanePrediction(entry)):
 
-		hlast (x)=sign(w_last  ∙x+b_last)
+![immagine](https://user-images.githubusercontent.com/94845303/163733894-6c1c1553-622d-41c2-9ca4-71e7ca148691.png)
 	
 	- Il metodo ExecuteModelPrediction: questo produce le predizioni voted e average utilizzando l'intera lista di LinearPlanes e posiziona i risultati negli attributi votedPrediction e avgPrediction; in particolare il loop implementa i classificatori:
 
-		hvoted (x)=sign(∑24_i^|listlength▒〖hi.successes ∗sign(hi (x))   〗)
-
-		haverage (x)=sign(∑24_i^|listlength▒〖hi.successes ∗ hi (x)   〗)
+![immagine](https://user-images.githubusercontent.com/94845303/163733908-7733d6eb-e83b-4f7b-8b1b-ef70f1e2122d.png)
 
 	sommando iterativamente sulle quantità votedResults e avgResults.
 		
