@@ -23,7 +23,7 @@ Per eseguire il progetto:
 	
 	Descrizioni Classi / Implementazione:
 
-Entry:
+# Entry
 Una entry contiene le informazioni di un'esempio del dataset; in particolare contiene due attributi:
 	float[] x contiene i valori di ogni pixel dei 28x28 pixel che compongono l'immagine (istanza dell'esempio)
 	Int y contiene il valore della cifra raffigurata all'interno dell'immagine (label dell'esempio) e può assumere valori che vanno da 0 a 9
@@ -33,7 +33,7 @@ Il metodo GetClass restituisce 1 o -1 per categorizzare le istanze di tipo entry
 	- Se y = 0,6,8,9 allora l'immagine appartiene alla classe 1
 	- Altrimenti appartiene alla classe -1
 	
-LinearPlane: 
+# LinearPlane 
 Gli oggetti LinearPlane contengono i parametri w e b di un piano per la classificazione; inoltre la variabile successes specifica la quantità di esempi classificati bene dal piano durante il training.
 
 Il metodo PlaneValue prende in input una entry e utilizza l'istanza x al suo interno per calcolare il valore della quantità:
@@ -45,7 +45,7 @@ calcolata in relazione all'array dei pesi w e il bias b contenuti all'interno de
 Il metodo UpdatePlaneParametersOverEntry prende in input una entry e utilizza l'esempio (x,y) contenuto al suo interno per aggiornare l'array dei pesi e il bias del piano.
 Questo metodo viene chiamato durante la fase di training.
 
-Model:
+# Model
 Un oggetto model tiene conto dei piani LinearPlanes prodotti durante l'esecuzione del training; quindi fornisce:
 	- Il piano lastLinearPlane: l'ultimo piano prodotto dal training; questo è utilizzato per calcolare la previsione last (calcolata con lastLinearPlane.PlanePrediction(entry)):
 
@@ -58,7 +58,7 @@ Un oggetto model tiene conto dei piani LinearPlanes prodotti durante l'esecuzion
 	sommando iterativamente sulle quantità votedResults e avgResults.
 		
 		
-Main:
+# Main
 
 Il programma può utilizzare più modelli; il numero di modelli utilizzati è specificato da NUMBER_OF_MODELS (eventualmente = 1 se si vuole produrre l'analisi tenendo conto di un solo modello). 
 
@@ -75,7 +75,7 @@ Il file di configurazione contiene:
 	- testSetSize: numero di esempi del dataset destinati al test: sono raccolti dal dataset a partire dall'esempio trainSetSize+1
 	- attributes: numero di attributi delle istanze x degli esempi
 
-DatasetManager:
+# DatasetManager
 
 DatasetManager gestisce la lettura dal dataset; il dataset è un file di testo contenente dataSetSize righe ciascuna delle quali è composta da 784 (28x28) valori separati da virgola, ognuno dei quali indica il valore di grigio di un determinato pixel, e da una cifra che va da 0 a 9 che indica la cifra rappresentata nell'immagine associata ai 28x28 pixel.
 
@@ -98,7 +98,7 @@ Il metodo ParseInputTestset carica nell'oggetto entry (fornito negli argomenti d
 
 Infine DatasetManager calcola la massima norma delle norme delle istanze nel dataset attraverso il metodo calculateMaxNorm.
 
-Training:
+# Training
 
 Questa classe contiene l'implementazione dei passi per l'algoritmo di training.
 
@@ -112,7 +112,7 @@ Per ogni iterazione di addestramento si legge una entry dal dataset e si guarda 
 		○ Si mette in cima alla lista di piani nel modello il nuovo piano
 		○ si mette il nuovo piano nel piano corrente e lo si aggiorna sulla entry su cui si è appena sbagliato a classificare; quindi si passa alla prossima iterazione
 
-Testing:
+# Testing
 
 Gli oggetti Testing elaborano e contengono i dati sul test di un modello testato sull'intero testset. 
 
